@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scissors</title>
+    <style>
+        body {
+            background: linear-gradient(-45deg, #23a6d5, #23d5ab);
+        }
+
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            /* border: 1px solid black; */
+            width: 90%;
+            height: 90%;
+        }
+
+        #player {
+            float: left;
+            /* border: 1px solid black; */
+            width: 49%;
+            height: 90%;
+            margin-top: 5%;
+        }
+
+        #opponent {
+            float: right;
+            /* border: 1px solid black; */
+            width: 50%;
+            height: 90%;
+            margin-top: 5%;
+        }
+
+        #header {
+            text-align: center;
+            color: white;
+            font-size: 32pt;
+        }
+
+        .images {
+            /* text-align: center; */
+            margin-top: 20%;
+            margin-left: 30%;
+        }
+
+        #rock {
+            float: left;
+            margin: 20px 20px 20px 20px;
+        }
+
+        #paper {
+            /* display: inline; */
+            float: left;
+            margin: 20px 20px 20px 20px;
+        }
+
+        #scissors {
+            float: left;
+            margin: 20px 20px 20px 20px;
+        }
+
+        p {
+            font-size: 32pt;
+        }
+
+        .after {
+            display: none;
+            margin-top: 20%;
+            margin-left: 30%;
+        }
+
+        .after img {
+            text-align: center;
+        }
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            margin-left: 50%;
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #fff;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 32px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">rock paper scissors</div>
+    <div id="container">
+        <div id="player">
+            <div class="before">
+                <div class="images">
+                    <p>take your pick</p>
+                    <img src="assets/img/rock.svg" alt="rock" id="rock" width="70">
+                    <img src="assets/img/paper.svg" alt="paper" id="paper" width="70">
+                    <img src="assets/img/scissors.svg" alt="scissors" id="scissors" width="70">
+                </div>
+            </div>
+            <div class="after">
+                <p>you made a pick</p>
+                <img src="" alt="choice" id="choice" width="80">
+            </div>
+        </div>
+        <div id="opponent">
+            <div class="before">
+                <div class="images">
+                    <p>waiting for opponent to choose</p>
+                </div><br>
+                <div class="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="after">
+                <p>opponent's choice</p>
+                <img src="" alt="choice" id="opChoice" width="80">
+            </div>
+        </div>
+    </div>
+    <script src="rockpaperscissors.js"></script>
+</body>
+
+</html>
